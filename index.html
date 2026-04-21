@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Catalog</title>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <header>
+      <h1>Book Catalog</h1>
+      <button id="theme-toggle">🌙</button>
+    </header>
+
+    <main>
+
+      <section id="search-section" class="search-wrapper">
+        <input id="search-input" type="text" placeholder="Search books..." />
+        <input id="author-filter" type="text" placeholder="Filter by author..." />
+      </section>
+
+      <section id="results-section">
+        <div id="status"></div>
+        <div id="book-container" class="books-grid"></div>
+      </section>
+
+      <section id="favorites-section">
+        <h2>Favorites</h2>
+        <div id="favorite-card" class="books-grid"></div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
