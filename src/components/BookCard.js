@@ -22,7 +22,6 @@ export function createBookCard(book, onFavorite) {
     nameBook.classList.add("book-title")
     authorName.classList.add("book-author")
     yearBook.classList.add("book-year")
-    const info = document.createElement("div")
 
     //use API cover or fallback placeholder
     if (book.cover_i) {

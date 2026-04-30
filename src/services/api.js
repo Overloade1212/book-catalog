@@ -23,6 +23,8 @@ export async function searchBooks(query) {
         return data.docs.slice(0, 10)
     } catch (error) {
         //catch error
-        throw error
+        console.error('API Error:', error);
+        throw new Error('Some message', { cause: error });
+
     }
 }

@@ -15,6 +15,8 @@ function getFavorites() {
     catch (error) {
         // If error return []
         return []
+        
+
     }
 }
 
