@@ -56,3 +56,6 @@ pipeline {
                 archiveArtifacts artifacts: 'dist/**', fingerprint: true
             }
         }
+
+    }
+}
