@@ -53,4 +53,6 @@ pipeline {
                 }
             }
             steps {
-                archiveArtifacts artifacts: 'dist/**',
+                archiveArtifacts artifacts: 'dist/**', fingerprint: true
+            }
+        }
