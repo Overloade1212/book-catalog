@@ -1,29 +1,21 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'node:20'
+        }
+    }
 
     stages {
 
         stage('Install') {
             steps {
-                sh '''
-                docker run --rm \
-                  -v $PWD:/app \
-                  -w /app \
-                  node:20 \
-                  npm install
-                '''
+                sh 'npm install'
             }
         }
 
         stage('Static Analysis') {
             steps {
-                sh '''
-                docker run --rm \
-                  -v $PWD:/app \
-                  -w /app \
-                  node:20 \
-                  npm run lint
-                '''
+                sh 'npm run lint'
             }
         }
 
@@ -35,13 +27,7 @@ pipeline {
                 }
             }
             steps {
-                sh '''
-                docker run --rm \
-                  -v $PWD:/app \
-                  -w /app \
-                  node:20 \
-                  npm run build
-                '''
+                sh 'npm run build'
             }
         }
 
@@ -56,6 +42,5 @@ pipeline {
                 archiveArtifacts artifacts: 'dist/**', fingerprint: true
             }
         }
-
     }
 }
